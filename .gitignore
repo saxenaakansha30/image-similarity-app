@@ -1,0 +1,55 @@
+# Ignore Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Ignore virtual environment
+bin/
+lib/
+lib64/
+include/
+pyvenv.cfg
+etc/
+share/
+
+# Or if you're using a named virtual env like `.venv` or `env`
+.venv/
+env/
+venv/
+
+# Ignore Jupyter/IPython notebooks checkpoints (if using)
+.ipynb_checkpoints/
+
+# Ignore pip cache
+pip-wheel-metadata/
+*.egg-info/
+*.egg
+*.whl
+
+# Ignore logs and temp files
+*.log
+*.tmp
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# VSCode or PyCharm settings (optional)
+.vscode/
+.idea/
+
+# Ignore test results or coverage files
+coverage.xml
+htmlcov/
+.cache/
+.tox/
+.pytest_cache/
+
+# Ignore files from your specific app
+images/
+.env
+
+# Ignore FAISS Index
+faiss_index
