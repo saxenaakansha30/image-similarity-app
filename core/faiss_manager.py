@@ -35,7 +35,7 @@ def add_to_index(embedding, image_path):
     save_index()
 
 # Function to search for similar images
-def search_index(embedding, k=3):
+def search_similar(embedding, k=3):
     distance, indices = index.search(embedding, k)
     similar_images = [image_paths[i] for i in indices[0]]
 
