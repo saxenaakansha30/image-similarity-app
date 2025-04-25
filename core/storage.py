@@ -16,3 +16,9 @@ def save_uploaded_image(uploaded_file):
         buffer.write(uploaded_file.read())
 
     return image_path
+
+def remove_uploaded_image(image_path):
+    if os.path.exists(image_path):
+        os.remove(image_path)
+    else:
+        print(f"The file {image_path} does not exist.")
