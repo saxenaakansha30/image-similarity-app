@@ -39,10 +39,15 @@ def add_to_index(embedding, image_path):
 
 # Function to search for similar images
 def search_similar(embedding, k=3):
+    if index.ntotal == 0:
+        return []
+
     distance, indices = index.search(embedding, k)
-    print(f"Distances: {distance}")
-    print(f"Indices: {indices}")
-    similar_images = [image_paths[i] for i in indices[0]]
+    similar_images = []
+    for i in indices[0]:
+        if i == -1:
+            break
+        similar_images.append(image_paths[i])
 
     return similar_images
 
