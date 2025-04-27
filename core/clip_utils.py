@@ -26,3 +26,11 @@ def get_image_embedding(image_path):
 
     return embedding_numpy
 
+def get_text_embedding(text):
+    text_tensor = clip.tokenize([text]).to(device) # Tokenizes the text and moves to GPU or CPU
+    with torch.no_grad():
+        embedding_tensor = model.encode_text(text_tensor)
+    
+    embedding_numpy = embedding_tensor.cpu().numpy() # Moves back to cpu and return numpy array
+
+    return embedding_numpy
